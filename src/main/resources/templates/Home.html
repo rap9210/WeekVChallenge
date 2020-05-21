@@ -28,36 +28,141 @@
                     <li class="nav-item">
                         <a class="nav-link " href="catform">Add new cat</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="doglistview">View Dog Owners</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="catlistview">View Cat Owners</a>
+                    </li>
                 </ul>
             </div>
             </nav>
-        <div class="jumbotron jumbotron-fluid" style="background-image: url(https://fghsnews.com/wp-content/uploads/2019/11/dogbreeding.jpg); background-repeat: no-repeat; background-size: 100%">
+        <div class="jumbotron jumbotron-fluid" style="background-image: url(https://fghsnews.com/wp-content/uploads/2019/11/dogbreeding.jpg); background-repeat: no-repeat; width: 100%; max-height: 100%">
             <div class="container" >
                 <h1 class="display-3">Chew Toys R' Us</h1>
 
             </div>
         </div>
-        <div class="card-group">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title">Dogs</h4>
-                    <p class="card-text"><a href="dogform">
-                        <div>Add new dog owner</div></a><br></p>
+        Cat Owners:<br>
+        <table class="table table-reflow">
+            <thead>
+            <tr>
+                <th>Customer</th>
+                <th>Phone</th>
+                <th>Address</th>
+                <th>Pet Name</th>
+                <th>Breed</th>
+                <th>Gender</th>
+                <th>Age</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            <div th:inline="text">
+                <div th:each="customer:${catOwners}">
+                    <tr>
+                        <td>
+                            <div>
+                                <p th:text="${customer.name}"/><br>
+                            </div>
+                        </td>
+
+                        <td>
+                            <div>
+                                <p th:text="${customer.phone}"/><br>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <p th:text="${customer.address1}"/><br>
+                                <p th:text="${customer.address2}"/><br>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <p th:text="${customer.petName}"/><br>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <p th:text="${customer.petBreed}"/><br>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <p th:text="${customer.petGender}"/><br>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <p th:text="${customer.petAge}"/><br>
+                            </div>
+                        </td>
+                    </tr>
                 </div>
             </div>
-            <div class="card">
-                <div class="card-body" >
-                    <h4 class="card-title">Cats</h4>
-                    <p class="card-text"><a href="catform">
-                        <div>Add new cat owner</div>
-                    </a><br></p>
+            </tbody>
+        </table>
+        Dog Owners:<br>
+        <table class="table table-reflow">
+            <thead>
+            <tr>
+                <th>Customer</th>
+                <th>Phone</th>
+                <th>Address</th>
+                <th>Pet</th>
+                <th>Breed</th>
+                <th>Gender</th>
+                <th>Age</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            <div th:inline="text">
+                <div th:each="customer:${dogOwners}">
+                    <tr>
+                        <td>
+                            <div>
+                                <p th:text="${customer.name}"/><br>
+                            </div>
+                        </td>
+
+                        <td>
+                            <div>
+                                <p th:text="${customer.phone}"/><br>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <p th:text="${customer.address1}"/><br>
+                                <p th:text="${customer.address2}"/><br>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <p th:text="${customer.petName}"/><br>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <p th:text="${customer.petBreed}"/><br>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <p th:text="${customer.petGender}"/><br>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <p th:text="${customer.petAge}"/><br>
+                            </div>
+                        </td>
+                    </tr>
                 </div>
             </div>
-
-        </div>
-
-
-
+            </tbody>
+        </table>
 
     </div>
     <div class="col-sm" style="background-color: skyblue"></div>

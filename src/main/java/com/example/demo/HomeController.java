@@ -54,6 +54,14 @@ public class HomeController {
         return "catlist";
     }
 
+    @RequestMapping("/doglistview")
+    public String loadDogOwners(){
+        return "doglistview";
+    }
+    @RequestMapping("/catlistview")
+    public String loadCatOwners(){
+        return "catlistview";
+    }
 
 
 
